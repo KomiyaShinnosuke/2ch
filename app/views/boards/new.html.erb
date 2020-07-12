@@ -1,8 +1,8 @@
-<%= link_to 'スレッド一覧にもどる', '/boards' %>
+<%= link_to 'スレッド一覧にもどる', boards_path %>
 <hr>
 <h1>Boards#new</h1>
- <%= form_tag "/boards", method: :post do %>
-  タイトル: <%= text_field_tag :title %> <br>
-  作成者名: <%= text_field_tag :editor %> <br>
+ <%= form_for @board do |f| %>
+  タイトル: <%= f.text_field :title %> <br>
+  作成者名: <%= f.text_field :editor %> <br>
   <%= submit_tag %>
  <% end %>
